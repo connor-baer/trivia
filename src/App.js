@@ -4,14 +4,14 @@ import { css } from 'emotion/macro';
 import { ThemeProvider } from 'emotion-theming';
 import {
   Card,
-  Heading,
-  List,
-  Text,
   theme as themes,
-  injectGlobalStyles
+  injectGlobalStyles,
+  Button
 } from '@sumup/circuit-ui';
 import { ReactComponent as LogoIcon } from './assets/logo.svg';
-import Data from './input.json';
+import Question from './components/Question';
+import AnswerList from './components/AnswerList';
+import questions from './input.json';
 
 const { circuit } = themes;
 
@@ -22,7 +22,7 @@ injectGlobalStyles({
    * Customizations of the global styles are done like this.
    * Note that we are passing in a template literal without
    * using the css macro.
-   * */
+   */
 
   custom: `
     body {
@@ -51,46 +51,43 @@ const Container = styled('header')`
 `;
 
 class App extends Component {
+  state = {
+    isPlaying: false,
+    question: {}
+  };
+
+  startGame = () => {
+    const firstQuestion = this.getQuestion();
+    this.setState({ question: firstQuestion, isPlaying: true });
+  };
+
+  getQuestion = () => {
+    return questions[0];
+  };
+
   render() {
+    const { question, isPlaying } = this.state;
+
+    if (!isPlaying) {
+      return (
+        <ThemeProvider theme={circuit}>
+          <Button onClick={this.startGame}> Start Game</Button>
+        </ThemeProvider>
+      );
+    }
+
+    const answers = question.options.map(({ id, option }) => ({
+      label: option,
+      value: id
+    }));
+
     return (
       <ThemeProvider theme={circuit}>
         <Container>
           <Logo data-testid="sumup-logo" />
           <Card>
-            <Heading size={Heading.KILO}>Welcome to SumUp React</Heading>
-            <Text>
-              This is a <code>create-react-app</code>
-              -based project featuring some SumUp-specific customizations:
-            </Text>
-            <List size={List.MEGA}>
-              <li>Circuit UI integration</li>
-              <li>Emotion support (incl. babel plugin)</li>
-              <li>Lodash support (incl. babel plugin)</li>
-              <li>
-                SumUp ESLint and Prettier configuration (in and outside{' '}
-                <code>react-scripts</code>)
-              </li>
-            </List>
-            <Text
-              size={Text.GIGA}
-              className={css`
-                text-align: center;
-              `}
-            >
-              Now go and build things!
-              <br />
-            </Text>
-            <Text
-              size={Text.GIGA}
-              className={css`
-                text-align: center;
-                transform: scale3d(1.5, 1.5, 1);
-              `}
-            >
-              <span role="img" aria-label="Emojis for building things">
-                🔨👩🏽‍💻👨🏼‍💻🚀
-              </span>
-            </Text>
+            <Question>{question.question}</Question>
+            <AnswerList answers={answers} />
           </Card>
         </Container>
       </ThemeProvider>

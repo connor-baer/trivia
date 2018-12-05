@@ -1,0 +1,37 @@
+{
+  "name": "trivia",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@sumup/circuit-ui": "^0.0.14-canary",
+    "emotion": "^9.0.0",
+    "emotion-theming": "^9.0.0",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-emotion": "^9.0.0",
+    "react-scripts": "2.1.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "foundry run eslint src/**/*.js",
+    "create-component": "foundry run plop component"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "@sumup/foundry": "^0.0.17",
+    "jest-dom": "^3.0.0",
+    "jest-emotion": "9.0.0",
+    "react-testing-library": "^5.3.1"
+  }
+}

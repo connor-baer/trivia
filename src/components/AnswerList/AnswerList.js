@@ -37,16 +37,17 @@ const AnswerList = ({ answers, onSelect, selected, correct }) => {
 AnswerList.propTypes = {
   answers: PropTypes.arrayOf(
     PropTypes.shape({
-      value: PropTypes.number.isRequired,
-      label: PropTypes.string.isRequired
+      id: PropTypes.string.isRequired,
+      option: PropTypes.string.isRequired
     })
   ),
   onSelect: PropTypes.func.isRequired,
-  selected: PropTypes.number.isRequired
+  selected: PropTypes.string
 };
 
 AnswerList.defaultProps = {
-  answers: []
+  answers: [],
+  selected: null
 };
 
 /**

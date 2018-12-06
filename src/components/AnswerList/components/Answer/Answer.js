@@ -41,10 +41,14 @@ const Answer = styled(RadioButton)(
 );
 
 Answer.propTypes = {
-  correct: PropTypes.bool
+  correct: PropTypes.bool,
+  selected: PropTypes.string,
+  checked: PropTypes.bool
 };
 
-Answer.defaultProps = {};
+Answer.defaultProps = {
+  checked: false
+};
 
 /**
  * @component

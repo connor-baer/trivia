@@ -5,19 +5,23 @@ import AnswerList from './AnswerList';
 const defaultProps = {
   answers: [
     {
-      value: 1,
-      label: 'Foo'
+      id: '1',
+      option: 'Foo'
     },
     {
-      value: 2,
-      label: 'Bar'
+      id: '2',
+      option: 'Bar'
     }
-  ]
+  ],
+  onSelect: jest.fn()
 };
+
+const renderAnswerList = (props = {}) =>
+  render(<AnswerList {...{ ...defaultProps, ...props }} />);
 
 describe('AnswerList', () => {
   it('should render with default styles', () => {
-    const { container } = render(<AnswerList {...defaultProps} />);
+    const { container } = renderAnswerList();
     expect(container.firstChild).toMatchSnapshot();
   });
 

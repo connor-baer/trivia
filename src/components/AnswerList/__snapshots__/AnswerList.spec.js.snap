@@ -27,7 +27,6 @@ exports[`AnswerList should render with default styles 1`] = `
   width: 50%;
   padding: 0 12px 12px 0;
   cursor: pointer;
-  font-weight: 700;
 }
 
 .emotion-0:focus + label::before {
@@ -47,7 +46,6 @@ exports[`AnswerList should render with default styles 1`] = `
   width: 50%;
   padding: 0 12px 12px 0;
   cursor: pointer;
-  font-weight: 700;
 }
 
 .emotion-2::before {
@@ -90,17 +88,6 @@ exports[`AnswerList should render with default styles 1`] = `
   transition: transform 0.05s ease-in,opacity 0.05s ease-in;
 }
 
-.emotion-2::before {
-  border-color: #3388FF;
-}
-
-.emotion-2::after {
-  -webkit-transform: translateY(-50%) scale(1,1);
-  -ms-transform: translateY(-50%) scale(1,1);
-  transform: translateY(-50%) scale(1,1);
-  opacity: 1;
-}
-
 .emotion-2::before,
 .emotion-2::after {
   content: none;
@@ -111,13 +98,12 @@ exports[`AnswerList should render with default styles 1`] = `
 >
   <input
     aria-labelledby="question"
-    checked=""
     class="emotion-0 emotion-1"
     id="radio-button_1"
     name="answer-list"
     role="radiogroup"
     type="radio"
-    value=""
+    value="1"
   />
   <label
     aria-labelledby="question"
@@ -125,16 +111,18 @@ exports[`AnswerList should render with default styles 1`] = `
     for="radio-button_1"
     name="answer-list"
     role="radiogroup"
-  />
+    value="1"
+  >
+    Foo
+  </label>
   <input
     aria-labelledby="question"
-    checked=""
     class="emotion-0 emotion-1"
     id="radio-button_2"
     name="answer-list"
     role="radiogroup"
     type="radio"
-    value=""
+    value="2"
   />
   <label
     aria-labelledby="question"
@@ -142,6 +130,9 @@ exports[`AnswerList should render with default styles 1`] = `
     for="radio-button_2"
     name="answer-list"
     role="radiogroup"
-  />
+    value="2"
+  >
+    Bar
+  </label>
 </div>
 `;

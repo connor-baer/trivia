@@ -4,7 +4,7 @@ import { RadioButton } from '@sumup/circuit-ui';
 
 const baseStyles = ({ theme }) => css`
   width: 50%;
-  margin: 0 ${theme.spacings.kilo} ${theme.spacings.kilo} 0;
+  padding: 4px ${theme.spacings.kilo};
   cursor: pointer;
 
   &::before,
@@ -24,6 +24,7 @@ const baseStyles = ({ theme }) => css`
 
   &:hover {
     background-color: #ffc859;
+    border-radius: 30px;
   }
 `;
 

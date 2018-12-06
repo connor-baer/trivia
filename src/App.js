@@ -1,6 +1,5 @@
 import React from 'react';
-import styled from 'react-emotion/macro';
-import { css } from 'emotion/macro';
+import styled, { css } from 'react-emotion';
 import { ThemeProvider } from 'emotion-theming';
 import { Card, theme as themes, injectGlobalStyles } from '@sumup/circuit-ui';
 import { ReactComponent as LogoIcon } from './assets/logo.svg';

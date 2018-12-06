@@ -56,15 +56,10 @@ class App extends Component {
       );
     }
 
-    const answers = question.options.map(({ id, option }) => ({
-      label: option,
-      value: id.toString()
-    }));
-
     return (
       <>
-        <Question>{question.question}</Question>
-        <AnswerList answers={answers} onSelect={this.validateAnswer} />
+        <Question id="question">{question.question}</Question>
+        <AnswerList answers={question.options} onSelect={this.validateAnswer} />
       </>
     );
   }

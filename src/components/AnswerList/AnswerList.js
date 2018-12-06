@@ -1,15 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { RadioButtonGroup } from '@sumup/circuit-ui';
+
+import Answer from './components/Answer';
 
 const AnswerList = ({ answers, onSelect, selected }) => {
   return (
-    <RadioButtonGroup
-      options={answers}
-      onChange={onSelect}
-      value={selected}
-      name="answer-list"
-    />
+    <>
+      {answers &&
+        answers.map(({ option, id, className, ...props }) => (
+          <Answer
+            key={id}
+            value={id}
+            name="answer-list"
+            onToggle={onSelect}
+            checked={id === selected}
+            aria-labelledby="question"
+            role="radiogroup"
+          >
+            {option}
+          </Answer>
+        ))}
+    </>
   );
 };
 

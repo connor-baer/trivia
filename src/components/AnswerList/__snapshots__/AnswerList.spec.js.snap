@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AnswerList should render with default styles 1`] = `
+.emotion-0 {
+  border: 0px;
+  -webkit-clip: rect(0 0 0 0);
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0px;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  color: red;
+}
+
+.emotion-0:focus + label::before {
+  border-width: 2px;
+  border-color: #3388FF;
+}
+
+<input
+  aria-labelledby="question"
+  checked=""
+  class="emotion-0 emotion-1"
+  id="radio-button_1"
+  name="answer-list"
+  role="radiogroup"
+  type="radio"
+  value=""
+/>
+`;

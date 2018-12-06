@@ -1,18 +1,29 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { Heading, Button, Text } from '@sumup/circuit-ui';
+import { Heading, Button, Text, Input, Label } from '@sumup/circuit-ui';
 import styled, { css } from 'react-emotion';
 
-function Start({ navigate, resetScore }) {
+function Start({ navigate, resetScore, setCurrentUser, currentUser }) {
   const handleStartGame = () => {
     resetScore();
     navigate('play');
   };
+
+  const handleChange = event => {
+    const { value } = event.target;
+    setCurrentUser(value);
+  };
   return (
     <>
       <Heading>SumUp Trivia</Heading>
-      <Text>Have fun! 🎉</Text>
-      <Button primary onClick={handleStartGame}>
+      <Label htmlFor="username">What's your name?</Label>
+      <Input
+        onChange={handleChange}
+        value={currentUser}
+        placeholder="Jane"
+        id="username"
+      />
+      <Button primary onClick={handleStartGame} disabled={!currentUser}>
         Start Game
       </Button>
     </>

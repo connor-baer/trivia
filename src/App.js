@@ -54,7 +54,9 @@ const Container = styled('article')`
 class App extends Component {
   state = {
     route: 'start',
-    score: 0
+    score: 0,
+    currentUser: '',
+    leaderboard: []
   };
 
   navigate = route => {
@@ -69,19 +71,34 @@ class App extends Component {
     this.setState({ score: 0 });
   };
 
+  setCurrentUser = currentUser => {
+    this.setState({ currentUser });
+  };
+
+  updateLeaderboard = () => {
+    console.log('hello');
+    this.setState(prevState => {
+      const { currentUser: user, score, leaderboard } = prevState;
+      return {
+        leaderboard: [...leaderboard, { user, score }]
+      };
+    });
+  };
+
   render() {
-    const { route, score } = this.state;
-    const Page = pageMap[route];
+    const Page = pageMap[this.state.route];
     return (
       <ThemeProvider theme={circuit}>
         <Container>
           <Logo data-testid="sumup-logo" />
           <Card>
             <Page
-              score={score}
+              {...this.state}
               navigate={this.navigate}
               resetScore={this.resetScore}
               incrementScore={this.incrementScore}
+              setCurrentUser={this.setCurrentUser}
+              updateLeaderboard={this.updateLeaderboard}
             />
           </Card>
         </Container>

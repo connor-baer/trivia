@@ -47,12 +47,19 @@ class App extends Component {
   handleNextQuestion = () => {
     const nextQuestion = this.getQuestion();
     this.props.incrementScore();
-    
+
     if (nextQuestion === null) {
-      return this.props.navigate('finish');
+      this.finish();
+      return;
     }
 
     this.setState({ question: nextQuestion, selected: null });
+  };
+
+  finish = () => {
+    const { navigate, updateLeaderboard } = this.props;
+    updateLeaderboard();
+    navigate('finish');
   };
 
   render() {
@@ -72,9 +79,7 @@ class App extends Component {
         {selected && correct && (
           <Button onClick={this.handleNextQuestion}>Next</Button>
         )}
-        {selected && !correct && (
-          <Button onClick={() => navigate('finish')}>Finish</Button>
-        )}
+        {selected && !correct && <Button onClick={this.finish}>Finish</Button>}
         <RestartButton plain onClick={() => navigate('start')}>
           Restart Game
         </RestartButton>

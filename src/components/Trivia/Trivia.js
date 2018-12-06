@@ -19,12 +19,12 @@ class App extends Component {
 
   state = {
     isPlaying: false,
-    question: {},
-    selected: null
+    selected: null,
+    question: {}
   };
 
   startGame = () => {
-    const firstQuestion = this.getQuestion();
+    const firstQuestion = this.props.questions[0];
     this.setState({ question: firstQuestion, isPlaying: true });
   };
 
@@ -33,9 +33,16 @@ class App extends Component {
   };
 
   getQuestion = () => {
-    const { questions } = this.props;
-    const randomIndex = randomNumber(0, questions.length);
-    return questions[randomIndex];
+    const currentQuestionId = this.props.question.id;
+    const nextQuestionId = currentQuestionId + 1;
+
+    if (nextQuestionId === this.props.questions.length) {
+      return null
+    }
+
+    const nextQuestion = this.props.questions[nextQuestionId];
+
+    this.setState({ question: nextQuestion });
   };
 
   handleAnswer = event => {

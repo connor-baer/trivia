@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Trivia from './Trivia';
+import questions from '../../input.json';
 
 describe.skip('Trivia', () => {
   // !TODO: write your tests.
@@ -22,3 +23,14 @@ describe.skip('Trivia', () => {
     });
   });
 });
+
+// describe('Trivia', () => {
+//   describe('Get Questions', () => {
+//     it('should reduce available questions', async () => {
+//       const allQuestions = questions;
+      
+//       const actual = await axe(wrapper);
+//       expect(actual).toHaveNoViolations();
+//     });
+//   });
+// });

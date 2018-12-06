@@ -33,21 +33,24 @@ class App extends Component {
   };
 
   getQuestion = () => {
-    const currentQuestionId = this.props.question.id;
-    const nextQuestionId = currentQuestionId + 1;
+    const currentQuestionId = this.state.question.id;
+    const nextQuestionId = Number(currentQuestionId) + 1;
 
     if (nextQuestionId === this.props.questions.length) {
-      return null
+      return null;
     }
 
-    const nextQuestion = this.props.questions[nextQuestionId];
-
-    this.setState({ question: nextQuestion });
+    return this.props.questions[nextQuestionId];
   };
 
   handleAnswer = event => {
     const { value } = event.target;
     this.setState({ selected: value });
+  };
+
+  handleNextQuestion = () => {
+    const nextQuestion = this.getQuestion();
+    this.setState({ question: nextQuestion, selected: null });
   };
 
   render() {
@@ -76,6 +79,7 @@ class App extends Component {
         <RestartButton plain onClick={this.restartGame}>
           Restart Game
         </RestartButton>
+        {selected && <Button onClick={this.handleNextQuestion}>Next</Button>}
       </>
     );
   }

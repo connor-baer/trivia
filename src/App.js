@@ -58,12 +58,16 @@ class App extends Component {
     score: 0
   };
 
-  navigate = route => () => {
+  navigate = route => {
     this.setState({ route });
   };
 
   incrementScore = () => {
     this.setState(prevState => ({ score: prevState.score + 1 }));
+  };
+
+  resetScore = () => {
+    this.setState({ score: 0 });
   };
 
   render() {
@@ -77,6 +81,7 @@ class App extends Component {
             <Page
               score={score}
               navigate={this.navigate}
+              resetScore={this.resetScore}
               incrementScore={this.incrementScore}
             />
           </Card>

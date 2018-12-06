@@ -63,9 +63,9 @@ class App extends Component {
           <Button onClick={this.handleNextQuestion}>Next</Button>
         )}
         {selected && !correct && (
-          <Button onClick={navigate('finish')}>Finish</Button>
+          <Button onClick={() => navigate('finish')}>Finish</Button>
         )}
-        <RestartButton plain onClick={navigate('start')}>
+        <RestartButton plain onClick={() => navigate('start')}>
           Restart Game
         </RestartButton>
       </>

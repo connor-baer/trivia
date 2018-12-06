@@ -8,7 +8,7 @@ function Finish({ navigate, score }) {
     <>
       <Heading>GAME OVER</Heading>
       <Text>You have answered {score} questions correctly! 🎉</Text>
-      <Button primary onClick={navigate('start')}>
+      <Button primary onClick={() => navigate('start')}>
         Start Over
       </Button>
     </>

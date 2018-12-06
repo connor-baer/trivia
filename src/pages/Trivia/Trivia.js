@@ -42,6 +42,11 @@ class App extends Component {
   handleNextQuestion = () => {
     const nextQuestion = this.getQuestion();
     this.props.incrementScore();
+    
+    if (nextQuestion === null) {
+      return this.props.navigate('finish');
+    }
+
     this.setState({ question: nextQuestion, selected: null });
   };
 

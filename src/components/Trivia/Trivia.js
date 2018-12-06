@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Heading, Button } from '@sumup/circuit-ui';
+import styled from 'react-emotion/macro';
+import { css } from 'emotion/macro';
 
 import randomNumber from '../../utils/random-number';
 import Question from '../Question';
 import AnswerList from '../AnswerList';
+
+const RestartButton = styled(Button)`
+  margin-top: 20px;
+`;
 
 class App extends Component {
   static propTypes = {
@@ -19,6 +25,10 @@ class App extends Component {
   startGame = () => {
     const firstQuestion = this.getQuestion();
     this.setState({ question: firstQuestion, isPlaying: true });
+  };
+
+  restartGame = () => {
+    this.setState({ isPlaying: false });
   };
 
   getQuestion = () => {
@@ -60,6 +70,9 @@ class App extends Component {
       <>
         <Question id="question">{question.question}</Question>
         <AnswerList answers={question.options} onSelect={this.validateAnswer} />
+        <RestartButton plain onClick={this.restartGame}>
+          Restart Game
+        </RestartButton>
       </>
     );
   }

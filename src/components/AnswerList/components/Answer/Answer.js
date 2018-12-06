@@ -1,9 +1,16 @@
 import PropTypes from 'prop-types';
 import styled, { css } from 'react-emotion';
-import RadioButton from '@sumup/circuit-ui/lib/components/RadioButton';
+import { RadioButton } from '@sumup/circuit-ui';
 
 const baseStyles = ({ theme }) => css`
-  color: red;
+  width: 50%;
+  padding: 0 ${theme.spacings.kilo} ${theme.spacings.kilo} 0;
+  cursor: pointer;
+
+  &::before,
+  &::after {
+    content: none;
+  }
 `;
 
 const Answer = styled(RadioButton)(baseStyles);

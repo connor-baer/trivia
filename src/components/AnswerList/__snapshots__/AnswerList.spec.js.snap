@@ -1,6 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`AnswerList should render with default styles 1`] = `
+.emotion-8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
 .emotion-0 {
   border: 0px;
   -webkit-clip: rect(0 0 0 0);
@@ -14,7 +24,9 @@ exports[`AnswerList should render with default styles 1`] = `
   position: absolute;
   white-space: nowrap;
   width: 1px;
-  color: red;
+  width: 50%;
+  padding: 0 12px 12px 0;
+  cursor: pointer;
 }
 
 .emotion-0:focus + label::before {
@@ -22,14 +34,112 @@ exports[`AnswerList should render with default styles 1`] = `
   border-color: #3388FF;
 }
 
-<input
-  aria-labelledby="question"
-  checked=""
-  class="emotion-0 emotion-1"
-  id="radio-button_1"
-  name="answer-list"
-  role="radiogroup"
-  type="radio"
-  value=""
-/>
+.emotion-0::before,
+.emotion-0::after {
+  content: none;
+}
+
+.emotion-2 {
+  color: #5C656F;
+  padding-left: 24px;
+  position: relative;
+  width: 50%;
+  padding: 0 12px 12px 0;
+  cursor: pointer;
+}
+
+.emotion-2::before {
+  box-sizing: border-box;
+  height: 16px;
+  width: 16px;
+  box-shadow: inset 0 1px 2px 0 rgba(102,113,123,0.12);
+  background-color: #FFFFFF;
+  border: 1px solid #9DA7B1;
+  border-radius: 100%;
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -webkit-transition: border 0.05s ease-in;
+  transition: border 0.05s ease-in;
+}
+
+.emotion-2::after {
+  box-sizing: border-box;
+  height: 8px;
+  width: 8px;
+  background-color: #3388FF;
+  border-radius: 100%;
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 4px;
+  -webkit-transform: translateY(-50%) scale(0,0);
+  -ms-transform: translateY(-50%) scale(0,0);
+  transform: translateY(-50%) scale(0,0);
+  opacity: 0;
+  -webkit-transition: -webkit-transform 0.05s ease-in,opacity 0.05s ease-in;
+  -webkit-transition: transform 0.05s ease-in,opacity 0.05s ease-in;
+  transition: transform 0.05s ease-in,opacity 0.05s ease-in;
+}
+
+.emotion-2::before {
+  border-color: #3388FF;
+}
+
+.emotion-2::after {
+  -webkit-transform: translateY(-50%) scale(1,1);
+  -ms-transform: translateY(-50%) scale(1,1);
+  transform: translateY(-50%) scale(1,1);
+  opacity: 1;
+}
+
+.emotion-2::before,
+.emotion-2::after {
+  content: none;
+}
+
+<div
+  class="emotion-8"
+>
+  <input
+    aria-labelledby="question"
+    checked=""
+    class="emotion-0 emotion-1"
+    id="radio-button_1"
+    name="answer-list"
+    role="radiogroup"
+    type="radio"
+    value=""
+  />
+  <label
+    aria-labelledby="question"
+    class="emotion-2 emotion-3"
+    for="radio-button_1"
+    name="answer-list"
+    role="radiogroup"
+  />
+  <input
+    aria-labelledby="question"
+    checked=""
+    class="emotion-0 emotion-1"
+    id="radio-button_2"
+    name="answer-list"
+    role="radiogroup"
+    type="radio"
+    value=""
+  />
+  <label
+    aria-labelledby="question"
+    class="emotion-2 emotion-3"
+    for="radio-button_2"
+    name="answer-list"
+    role="radiogroup"
+  />
+</div>
 `;

@@ -14,12 +14,19 @@ exports[`Answer should render with default styles 1`] = `
   position: absolute;
   white-space: nowrap;
   width: 1px;
-  color: red;
+  width: 50%;
+  padding: 0 12px 12px 0;
+  cursor: pointer;
 }
 
 .emotion-0:focus + label::before {
   border-width: 2px;
   border-color: #3388FF;
+}
+
+.emotion-0::before,
+.emotion-0::after {
+  content: none;
 }
 
 <input

@@ -26,6 +26,13 @@ function Start({ navigate, resetScore, setCurrentUser, currentUser }) {
       <Button primary onClick={handleStartGame} disabled={!currentUser}>
         Start Game
       </Button>
+      <Button
+        style={{ marginTop: '16px' }}
+        onClick={() => navigate('leaderboard')}
+        plain
+      >
+        View leaderboard
+      </Button>
     </>
   );
 }

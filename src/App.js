@@ -7,6 +7,7 @@ import { ReactComponent as LogoIcon } from './assets/logo.svg';
 import Start from './pages/Start';
 import Trivia from './pages/Trivia';
 import Finish from './pages/Finish';
+import Leaderboard from './pages/Leaderboard';
 
 const { circuit } = themes;
 
@@ -29,7 +30,8 @@ injectGlobalStyles({
 const pageMap = {
   start: Start,
   play: Trivia,
-  finish: Finish
+  finish: Finish,
+  leaderboard: Leaderboard
 };
 
 const Logo = styled(LogoIcon)`
@@ -76,7 +78,6 @@ class App extends Component {
   };
 
   updateLeaderboard = () => {
-    console.log('hello');
     this.setState(prevState => {
       const { currentUser: user, score, leaderboard } = prevState;
       return {

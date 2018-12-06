@@ -8,10 +8,6 @@ import Question from '../../components/Question';
 import AnswerList from '../../components/AnswerList';
 import questions from '../../input.json';
 
-const RestartButton = styled(Button)`
-  margin-top: 20px;
-`;
-
 const ScoreBadge = styled(Badge)`
   display: block;
   margin: 0 auto 16px;
@@ -80,9 +76,13 @@ class App extends Component {
           <Button onClick={this.handleNextQuestion}>Next</Button>
         )}
         {selected && !correct && <Button onClick={this.finish}>Finish</Button>}
-        <RestartButton plain onClick={() => navigate('start')}>
+        <Button
+          plain
+          style={{ marginTop: '16px' }}
+          onClick={() => navigate('start')}
+        >
           Restart Game
-        </RestartButton>
+        </Button>
       </>
     );
   }

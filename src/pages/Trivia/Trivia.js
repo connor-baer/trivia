@@ -35,7 +35,8 @@ class App extends Component {
 
   handleAnswer = event => {
     const { value } = event.target;
-    this.setState({ selected: value });
+    const correct = value === this.state.question.answer;
+    this.setState({ selected: value, correct });
   };
 
   handleNextQuestion = () => {
@@ -46,7 +47,7 @@ class App extends Component {
 
   render() {
     const { navigate, score } = this.props;
-    const { question, selected } = this.state;
+    const { question, selected, correct } = this.state;
 
     return (
       <>
@@ -58,7 +59,12 @@ class App extends Component {
           selected={selected}
           correct={question.answer}
         />
-        {selected && <Button onClick={this.handleNextQuestion}>Next</Button>}
+        {selected && correct && (
+          <Button onClick={this.handleNextQuestion}>Next</Button>
+        )}
+        {selected && !correct && (
+          <Button onClick={navigate('finish')}>Finish</Button>
+        )}
         <RestartButton plain onClick={navigate('start')}>
           Restart Game
         </RestartButton>

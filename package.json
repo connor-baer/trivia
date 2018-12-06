@@ -1,7 +1,6 @@
 {
   "name": "trivia",
   "version": "0.1.0",
-  "private": true,
   "dependencies": {
     "@sumup/circuit-ui": "^0.0.14-canary",
     "emotion": "^9.0.0",
@@ -30,8 +29,9 @@
   ],
   "devDependencies": {
     "@sumup/foundry": "^0.0.17",
+    "jest-axe": "^3.1.0",
     "jest-dom": "^3.0.0",
-    "jest-emotion": "9.0.0",
+    "jest-emotion": "^9.0.0",
     "react-testing-library": "^5.3.1"
   }
 }

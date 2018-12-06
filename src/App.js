@@ -46,8 +46,7 @@ const Container = styled('article')`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-width: 600px;
-  min-width: 400px;
+  max-width: 400px;
   min-height: 100vh;
   margin: 0 auto;
 `;

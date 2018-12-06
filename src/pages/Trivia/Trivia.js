@@ -12,6 +12,11 @@ const RestartButton = styled(Button)`
   margin-top: 20px;
 `;
 
+const ScoreBadge = styled(Badge)`
+  display: block;
+  margin: 0 auto 16px;
+`;
+
 class App extends Component {
   static propTypes = {
     questions: PropTypes.array
@@ -56,7 +61,7 @@ class App extends Component {
 
     return (
       <>
-        <Badge>{score}</Badge>
+        <ScoreBadge color="warning">{`💸 ${score}`}</ScoreBadge>
         <Question id="question">{question.question}</Question>
         <AnswerList
           answers={question.options}

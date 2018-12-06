@@ -23,6 +23,7 @@ const correctStyles = ({ theme, selected, correct }) =>
   selected &&
   correct &&
   css`
+    opacity: 1;
     color: ${theme.colors.success};
   `;
 
@@ -30,6 +31,7 @@ const incorrectStyles = ({ theme, checked, correct }) =>
   checked &&
   !correct &&
   css`
+    opacity: 1;
     color: ${theme.colors.danger};
   `;
 

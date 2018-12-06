@@ -22,6 +22,7 @@ const AnswerList = ({ answers, onSelect, selected, correct }) => {
             name="answer-list"
             onToggle={onSelect}
             selected={selected}
+            disabled={selected}
             checked={id === selected}
             aria-labelledby="question"
             role="radiogroup"

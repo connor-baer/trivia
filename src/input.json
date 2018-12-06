@@ -55,5 +55,51 @@
       }
     ],
     "answer": "2"
+  },
+  {
+    "id": "3",
+    "question": "What dragon appears in the Human guise of Lord Victor Nefarius?",
+    "options": [
+      {
+        "id": "0",
+        "option": "Sabellian"
+      },
+      {
+        "id": "1",
+        "option": "Itharius"
+      },
+      {
+        "id": "2",
+        "option": "Sapphiron"
+      },
+      {
+        "id": "3",
+        "option": "Nefarian"
+      }
+    ],
+    "answer": "3"
+  },
+  {
+    "id": "4",
+    "question": "Which paladin was not among the five when the Silver Hand was originally created?",
+    "options": [
+      {
+        "id": "0",
+        "option": "Saidan"
+      },
+      {
+        "id": "1",
+        "option": "Uther"
+      },
+      {
+        "id": "2",
+        "option": "Gavinrad"
+      },
+      {
+        "id": "3",
+        "option": "Alexandros"
+      }
+    ],
+    "answer": "3"
   }
 ]

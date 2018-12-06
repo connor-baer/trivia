@@ -9,6 +9,7 @@ exports[`AnswerList should render with default styles 1`] = `
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  margin-bottom: 12px;
 }
 
 .emotion-0 {
@@ -37,6 +38,18 @@ exports[`AnswerList should render with default styles 1`] = `
 .emotion-0::before,
 .emotion-0::after {
   content: none;
+  box-sizing: border-box;
+  height: auto;
+  width: auto;
+  background-color: transparent;
+  border-radius: 0;
+  display: inline;
+  position: static;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+  margin-left: 4px;
+  opacity: 1;
 }
 
 .emotion-2 {
@@ -91,6 +104,18 @@ exports[`AnswerList should render with default styles 1`] = `
 .emotion-2::before,
 .emotion-2::after {
   content: none;
+  box-sizing: border-box;
+  height: auto;
+  width: auto;
+  background-color: transparent;
+  border-radius: 0;
+  display: inline;
+  position: static;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+  margin-left: 4px;
+  opacity: 1;
 }
 
 <div

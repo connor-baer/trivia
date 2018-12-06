@@ -7,6 +7,7 @@ import styled, { css } from 'react-emotion';
 const containerStyles = ({ theme }) => css`
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: ${theme.spacings.kilo};
 `;
 
 const Container = styled('div')(containerStyles);

@@ -10,6 +10,16 @@ const baseStyles = ({ theme }) => css`
   &::before,
   &::after {
     content: none;
+    box-sizing: border-box;
+    height: auto;
+    width: auto;
+    background-color: transparent;
+    border-radius: 0;
+    display: inline;
+    position: static;
+    transform: none;
+    margin-left: ${theme.spacings.bit};
+    opacity: 1;
   }
 `;
 
@@ -25,6 +35,10 @@ const correctStyles = ({ theme, selected, correct }) =>
   css`
     opacity: 1;
     color: ${theme.colors.success};
+
+    &::after {
+      content: '✅';
+    }
   `;
 
 const incorrectStyles = ({ theme, checked, correct }) =>
@@ -33,6 +47,10 @@ const incorrectStyles = ({ theme, checked, correct }) =>
   css`
     opacity: 1;
     color: ${theme.colors.danger};
+
+    &::after {
+      content: '❌';
+    }
   `;
 
 const Answer = styled(RadioButton)(

@@ -76,10 +76,10 @@ class App extends Component {
           selected={selected}
           correct={question.answer}
         />
+        {selected && <Button onClick={this.handleNextQuestion}>Next</Button>}
         <RestartButton plain onClick={this.restartGame}>
           Restart Game
         </RestartButton>
-        {selected && <Button onClick={this.handleNextQuestion}>Next</Button>}
       </>
     );
   }

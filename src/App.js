@@ -52,21 +52,31 @@ const Container = styled('article')`
 
 class App extends Component {
   state = {
-    route: 'start'
+    route: 'start',
+    score: 0
   };
 
   navigate = route => () => {
     this.setState({ route });
   };
 
+  incrementScore = () => {
+    this.setState(prevState => ({ score: prevState.score + 1 }));
+  };
+
   render() {
-    const Page = pageMap[this.state.route];
+    const { route, score } = this.state;
+    const Page = pageMap[route];
     return (
       <ThemeProvider theme={circuit}>
         <Container>
           <Logo data-testid="sumup-logo" />
           <Card>
-            <Page navigate={this.navigate} />
+            <Page
+              score={score}
+              navigate={this.navigate}
+              incrementScore={this.incrementScore}
+            />
           </Card>
         </Container>
       </ThemeProvider>

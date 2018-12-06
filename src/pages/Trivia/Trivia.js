@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Heading, Button, Text } from '@sumup/circuit-ui';
+import { Heading, Button, Text, Badge } from '@sumup/circuit-ui';
 import styled, { css } from 'react-emotion';
 
 import randomNumber from '../../utils/random-number';
@@ -40,15 +40,17 @@ class App extends Component {
 
   handleNextQuestion = () => {
     const nextQuestion = this.getQuestion();
+    this.props.incrementScore();
     this.setState({ question: nextQuestion, selected: null });
   };
 
   render() {
-    const { navigate } = this.props;
+    const { navigate, score } = this.props;
     const { question, selected } = this.state;
 
     return (
       <>
+        <Badge>{score}</Badge>
         <Question id="question">{question.question}</Question>
         <AnswerList
           answers={question.options}

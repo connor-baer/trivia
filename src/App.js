@@ -6,6 +6,7 @@ import { Card, theme as themes, injectGlobalStyles } from '@sumup/circuit-ui';
 import { ReactComponent as LogoIcon } from './assets/logo.svg';
 import Start from './pages/Start';
 import Trivia from './pages/Trivia';
+import Finish from './pages/Finish';
 
 const { circuit } = themes;
 
@@ -27,7 +28,8 @@ injectGlobalStyles({
 
 const pageMap = {
   start: Start,
-  play: Trivia
+  play: Trivia,
+  finish: Finish
 };
 
 const Logo = styled(LogoIcon)`

@@ -19,7 +19,8 @@ class App extends Component {
 
   state = {
     isPlaying: false,
-    question: {}
+    question: {},
+    selected: null
   };
 
   startGame = () => {
@@ -28,32 +29,22 @@ class App extends Component {
   };
 
   restartGame = () => {
-    this.setState({ isPlaying: false });
+    this.setState({ isPlaying: false, selected: null });
   };
 
   getQuestion = () => {
     const { questions } = this.props;
     const randomIndex = randomNumber(0, questions.length);
-    console.log('Index', randomIndex);
     return questions[randomIndex];
   };
 
-  validateAnswer = event => {
+  handleAnswer = event => {
     const { value } = event.target;
-    const isCorrect = Number(value) === this.state.question.answer;
-    console.log(value, this.state.question.answer);
-
-    if (isCorrect) {
-      const nextQuestion = this.getQuestion();
-      this.setState({ question: nextQuestion });
-      return;
-    }
-
-    this.setState({ isPlaying: false });
+    this.setState({ selected: value });
   };
 
   render() {
-    const { question, isPlaying } = this.state;
+    const { question, isPlaying, selected } = this.state;
 
     if (!isPlaying) {
       return (
@@ -69,7 +60,12 @@ class App extends Component {
     return (
       <>
         <Question id="question">{question.question}</Question>
-        <AnswerList answers={question.options} onSelect={this.validateAnswer} />
+        <AnswerList
+          answers={question.options}
+          onSelect={this.handleAnswer}
+          selected={selected}
+          correct={question.answer}
+        />
         <RestartButton plain onClick={this.restartGame}>
           Restart Game
         </RestartButton>

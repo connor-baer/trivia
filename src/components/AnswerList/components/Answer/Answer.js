@@ -13,10 +13,35 @@ const baseStyles = ({ theme }) => css`
   }
 `;
 
-const Answer = styled(RadioButton)(baseStyles);
+const checkedStyles = ({ theme, checked }) =>
+  checked &&
+  css`
+    font-weight: ${theme.fontWeight.bold};
+  `;
+
+const correctStyles = ({ theme, selected, correct }) =>
+  selected &&
+  correct &&
+  css`
+    color: ${theme.colors.success};
+  `;
+
+const incorrectStyles = ({ theme, checked, correct }) =>
+  checked &&
+  !correct &&
+  css`
+    color: ${theme.colors.danger};
+  `;
+
+const Answer = styled(RadioButton)(
+  baseStyles,
+  checkedStyles,
+  correctStyles,
+  incorrectStyles
+);
 
 Answer.propTypes = {
-  example: PropTypes.string
+  correct: PropTypes.bool
 };
 
 Answer.defaultProps = {};

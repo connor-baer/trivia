@@ -27,6 +27,7 @@ exports[`AnswerList should render with default styles 1`] = `
   width: 50%;
   padding: 0 12px 12px 0;
   cursor: pointer;
+  font-weight: 700;
 }
 
 .emotion-0:focus + label::before {
@@ -46,6 +47,7 @@ exports[`AnswerList should render with default styles 1`] = `
   width: 50%;
   padding: 0 12px 12px 0;
   cursor: pointer;
+  font-weight: 700;
 }
 
 .emotion-2::before {

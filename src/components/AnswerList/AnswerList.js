@@ -11,7 +11,7 @@ const containerStyles = ({ theme }) => css`
 
 const Container = styled('div')(containerStyles);
 
-const AnswerList = ({ answers, onSelect, selected }) => {
+const AnswerList = ({ answers, onSelect, selected, correct }) => {
   return (
     <Container>
       {answers &&
@@ -21,9 +21,11 @@ const AnswerList = ({ answers, onSelect, selected }) => {
             value={id}
             name="answer-list"
             onToggle={onSelect}
+            selected={selected}
             checked={id === selected}
             aria-labelledby="question"
             role="radiogroup"
+            correct={id === correct}
           >
             {option}
           </Answer>

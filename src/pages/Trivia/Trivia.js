@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Heading, Button } from '@sumup/circuit-ui';
-import styled from 'react-emotion/macro';
-import { css } from 'emotion/macro';
+import { Heading, Button, Text } from '@sumup/circuit-ui';
+import styled, { css } from 'react-emotion';
 
 import randomNumber from '../../utils/random-number';
-import Question from '../Question';
-import AnswerList from '../AnswerList';
+import Question from '../../components/Question';
+import AnswerList from '../../components/AnswerList';
+import questions from '../../input.json';
 
 const RestartButton = styled(Button)`
   margin-top: 20px;
@@ -18,29 +18,19 @@ class App extends Component {
   };
 
   state = {
-    isPlaying: false,
     selected: null,
-    question: {}
-  };
-
-  startGame = () => {
-    const firstQuestion = this.props.questions[0];
-    this.setState({ question: firstQuestion, isPlaying: true });
-  };
-
-  restartGame = () => {
-    this.setState({ isPlaying: false, selected: null });
+    question: questions[0]
   };
 
   getQuestion = () => {
     const currentQuestionId = this.state.question.id;
     const nextQuestionId = Number(currentQuestionId) + 1;
 
-    if (nextQuestionId === this.props.questions.length) {
+    if (nextQuestionId === questions.length) {
       return null;
     }
 
-    return this.props.questions[nextQuestionId];
+    return questions[nextQuestionId];
   };
 
   handleAnswer = event => {
@@ -54,18 +44,8 @@ class App extends Component {
   };
 
   render() {
-    const { question, isPlaying, selected } = this.state;
-
-    if (!isPlaying) {
-      return (
-        <>
-          <Heading>Welcome to SumUp trivia 👋</Heading>
-          <Button primary onClick={this.startGame}>
-            Start Game
-          </Button>
-        </>
-      );
-    }
+    const { navigate } = this.props;
+    const { question, selected } = this.state;
 
     return (
       <>
@@ -77,7 +57,7 @@ class App extends Component {
           correct={question.answer}
         />
         {selected && <Button onClick={this.handleNextQuestion}>Next</Button>}
-        <RestartButton plain onClick={this.restartGame}>
+        <RestartButton plain onClick={navigate('start')}>
           Restart Game
         </RestartButton>
       </>

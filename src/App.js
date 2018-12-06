@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled, { css } from 'react-emotion';
 import { ThemeProvider } from 'emotion-theming';
 import { Card, theme as themes, injectGlobalStyles } from '@sumup/circuit-ui';
+
 import { ReactComponent as LogoIcon } from './assets/logo.svg';
-import Trivia from './components/Trivia';
-import questions from './input.json';
+import Start from './pages/Start';
+import Trivia from './pages/Trivia';
 
 const { circuit } = themes;
 
@@ -24,6 +25,11 @@ injectGlobalStyles({
   `
 });
 
+const pageMap = {
+  start: Start,
+  play: Trivia
+};
+
 const Logo = styled(LogoIcon)`
   ${({ theme }) => css`
     display: block;
@@ -33,25 +39,39 @@ const Logo = styled(LogoIcon)`
   `};
 `;
 
-const Container = styled('header')`
+const Container = styled('article')`
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-width: 450px;
+  max-width: 600px;
+  min-width: 400px;
   min-height: 100vh;
   margin: 0 auto;
 `;
 
-const App = () => (
-  <ThemeProvider theme={circuit}>
-    <Container>
-      <Logo data-testid="sumup-logo" />
-      <Card>
-        <Trivia questions={questions} />
-      </Card>
-    </Container>
-  </ThemeProvider>
-);
+class App extends Component {
+  state = {
+    route: 'start'
+  };
+
+  navigate = route => () => {
+    this.setState({ route });
+  };
+
+  render() {
+    const Page = pageMap[this.state.route];
+    return (
+      <ThemeProvider theme={circuit}>
+        <Container>
+          <Logo data-testid="sumup-logo" />
+          <Card>
+            <Page navigate={this.navigate} />
+          </Card>
+        </Container>
+      </ThemeProvider>
+    );
+  }
+}
 
 export default App;

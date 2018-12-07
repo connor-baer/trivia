@@ -28,7 +28,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "@sumup/foundry": "^0.0.17",
+    "@sumup/foundry": "^1.0.0",
     "jest-axe": "^3.1.0",
     "jest-dom": "^3.0.0",
     "jest-emotion": "^9.0.0",

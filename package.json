@@ -1,6 +1,8 @@
 {
   "name": "trivia",
   "version": "0.1.0",
+  "license": "MIT",
+  "homepage": "https://connor-baer.github.io/trivia/",
   "dependencies": {
     "@sumup/circuit-ui": "^0.0.14-canary",
     "emotion": "^9.0.0",
@@ -16,7 +18,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "foundry run eslint src/**/*.js",
-    "create-component": "foundry run plop component"
+    "create-component": "foundry run plop component",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -29,6 +33,7 @@
   ],
   "devDependencies": {
     "@sumup/foundry": "^1.0.0",
+    "gh-pages": "^2.0.1",
     "jest-axe": "^3.1.0",
     "jest-dom": "^3.0.0",
     "jest-emotion": "^9.0.0",

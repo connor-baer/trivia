@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/trivia/static/media/elv.0a8065b0.svg"
   },
   {
-    "revision": "146cc849981f5404a8d7",
-    "url": "/trivia/static/js/main.146cc849.chunk.js"
+    "revision": "91d0f772fb7476b7d55b",
+    "url": "/trivia/static/js/main.91d0f772.chunk.js"
   },
   {
     "revision": "30964e3390d41baeff0b",
@@ -156,11 +156,11 @@ self.__precacheManifest = [
     "url": "/trivia/static/media/arrows.8646ca42.svg"
   },
   {
-    "revision": "283f1cfc16f30340dd98",
-    "url": "/trivia/static/js/1.283f1cfc.chunk.js"
+    "revision": "f1cdbac45e31189e910e",
+    "url": "/trivia/static/js/1.f1cdbac4.chunk.js"
   },
   {
-    "revision": "29ee448c7e329090ca60803ff0148d35",
+    "revision": "1f8080d134fb0e31825bdd2e499f5beb",
     "url": "/trivia/index.html"
   }
 ];

@@ -1,8 +1,8 @@
 {
-  "main.js": "/trivia/static/js/main.146cc849.chunk.js",
-  "main.js.map": "/trivia/static/js/main.146cc849.chunk.js.map",
-  "static/js/1.283f1cfc.chunk.js": "/trivia/static/js/1.283f1cfc.chunk.js",
-  "static/js/1.283f1cfc.chunk.js.map": "/trivia/static/js/1.283f1cfc.chunk.js.map",
+  "main.js": "/trivia/static/js/main.91d0f772.chunk.js",
+  "main.js.map": "/trivia/static/js/main.91d0f772.chunk.js.map",
+  "static/js/1.f1cdbac4.chunk.js": "/trivia/static/js/1.f1cdbac4.chunk.js",
+  "static/js/1.f1cdbac4.chunk.js.map": "/trivia/static/js/1.f1cdbac4.chunk.js.map",
   "runtime~main.js": "/trivia/static/js/runtime~main.30964e33.js",
   "runtime~main.js.map": "/trivia/static/js/runtime~main.30964e33.js.map",
   "static/media/mastercard.svg": "/trivia/static/media/mastercard.b8ab0cf0.svg",
@@ -43,6 +43,6 @@
   "static/media/arrows.svg": "/trivia/static/media/arrows.8646ca42.svg",
   "static/media/spinner.svg": "/trivia/static/media/spinner.7d8ad5e6.svg",
   "index.html": "/trivia/index.html",
-  "precache-manifest.2f8e3fe40dc5a713be90f3652e7298dc.js": "/trivia/precache-manifest.2f8e3fe40dc5a713be90f3652e7298dc.js",
+  "precache-manifest.7da693a0e782a97ad57c7b8d5b2635e3.js": "/trivia/precache-manifest.7da693a0e782a97ad57c7b8d5b2635e3.js",
   "service-worker.js": "/trivia/service-worker.js"
 }

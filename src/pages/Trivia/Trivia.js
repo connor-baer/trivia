@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import PropTypes from 'prop-types';
-import { Heading, Button, Text, Badge } from '@sumup/circuit-ui';
-import styled, { css } from 'react-emotion';
+import { Button, Badge } from '@sumup/circuit-ui';
+import styled from 'react-emotion';
 
-import randomNumber from '../../utils/random-number';
 import Question from '../../components/Question';
 import AnswerList from '../../components/AnswerList';
 import questions from '../../input.json';
@@ -15,7 +15,11 @@ const ScoreBadge = styled(Badge)`
 
 class App extends Component {
   static propTypes = {
-    questions: PropTypes.array
+    questions: PropTypes.array,
+    incrementScore: PropTypes.func,
+    updateLeaderboard: PropTypes.func,
+    navigate: PropTypes.func,
+    score: PropTypes.number
   };
 
   state = {

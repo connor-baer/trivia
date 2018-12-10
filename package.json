@@ -33,6 +33,7 @@
   ],
   "devDependencies": {
     "@sumup/foundry": "^1.0.0",
+    "eslint-plugin-prettier": "^3.0.0",
     "gh-pages": "^2.0.1",
     "jest-axe": "^3.1.0",
     "jest-dom": "^3.0.0",

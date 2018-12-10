@@ -1,7 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Heading, Button, Text, Input, Label } from '@sumup/circuit-ui';
-import styled, { css } from 'react-emotion';
+import { Heading, Button, Input, Label } from '@sumup/circuit-ui';
 
 function Start({ navigate, resetScore, setCurrentUser, currentUser }) {
   const handleStartGame = () => {
@@ -16,7 +14,7 @@ function Start({ navigate, resetScore, setCurrentUser, currentUser }) {
   return (
     <>
       <Heading>SumUp Trivia</Heading>
-      <Label htmlFor="username">What's your name?</Label>
+      <Label htmlFor="username">What is your name?</Label>
       <Input
         onChange={handleChange}
         value={currentUser}
